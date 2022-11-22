@@ -10,9 +10,8 @@ function setup() {
  //createCanvas(300,400);
   sW=windowWidth;
   sH=windowHeight;
- // sW=360;
   colorMode(HSB);
-    background(170,50,50);
+  background(170,50,50);  //tourquois
   createElement('h1','SLIDE THE SLIDER BELOW:');
   slider = createSlider(1,8,1);
  
@@ -23,19 +22,13 @@ function setup() {
   wave=new makeWave();
 }
 
-function draw() 
+function draw() {
  // clear();
-
-//  clear();
   translate(0,sH/2);
- 
   val = slider.value();
- // console.log("val",val,"SW",sW);
- 
   wave.renderMidline();
-  
- // wave.renderPoints();
- // wave.renderText();
+  wave.renderPoints();
+  wave.renderText();
  
-//wave.renderSineGraph();
+  wave.renderSineGraph();
 }

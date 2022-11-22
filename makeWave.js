@@ -2,7 +2,7 @@ class makeWave {
   constructor()  {
     
     this.numCir=int(sW/360);
-console.log("nC",this.numCir,"sW",sW);
+    console.log("nC",this.numCir,"sW",sW);
     
   }  //end the constructor
   
@@ -16,15 +16,21 @@ console.log("nC",this.numCir,"sW",sW);
     
   } 
   renderPoints(){
-    stroke(240,100,100);
+    stroke(240,100,100);  //blue
     strokeWeight(12);
-   // let SW=180;
-    
-    
+    let y = 0;
+    let x = 0;
+   for (let i=0;i<360;i=i+90){
+     y=sin(i*50); 
+     x=map(i,0,359,0,sW);
+     point(x,-y);
+   }
+   stroke(140,100,100);  //green
+    strokeWeight(12);
     let i=0;
-    let y=sin(i*50);
-    let x=map(i,0,360,0,sW);
-    point(x,-y);
+    y=sin(i*50);
+    x=map(i,0,360,0,sW);
+   
     i=90;
     y=sin(i)*50;
   
@@ -44,10 +50,11 @@ console.log("nC",this.numCir,"sW",sW);
     point(x,-y);
     textSize(18);
   noStroke();
+
   fill(120,100,100);  
    
-    
   }
+  
   renderText(){
   textSize(18);
   noStroke();
